@@ -1,0 +1,22 @@
+<style>
+    .led {
+        margin: 10px auto;
+        border-radius: 50%;
+        border: 2px solid #333;
+        background-color: #999;
+        width: 300px;
+        height: 300px;
+    }
+</style>
+<!-- ... -->
+<h1>Mahr.io</h1>
+<div class="led" id="led"></div>
+<!-- ... -->
+<script src="https://cdn.socket.io/socket.io-1.7.3.js"></script>
+<script type="text/javascript">
+  var led = document.getElementById('led');
+  var socket = io();
+  socket.on('event:led', function(val){
+    led.style.background = val ? '#000000' : '#00FF00';
+  });
+</script>

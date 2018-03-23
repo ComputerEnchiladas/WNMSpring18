@@ -1,0 +1,52 @@
+<script type="application/javascript">
+    // MOBILE TO SERVER (ionic to mahrio)
+  var xhttp = new XMLHttpRequest();
+  var button = function(key){
+    switch(key){
+      case 'a':
+        xhttp.open("GET", "/key/c4?d="+ new Date().getTime(), true);
+        break;
+      case 's':
+        xhttp.open("GET", "/key/c-4?d="+ new Date().getTime(), true);
+        break;
+      case 'd':
+        xhttp.open("GET", "/key/d4?d="+ new Date().getTime(), true);
+        break;
+      case 'f':
+        xhttp.open("GET", "/key/d-4?d="+ new Date().getTime(), true);
+        break;
+      case 'g':
+        xhttp.open("GET", "/key/e4?d="+ new Date().getTime(), true);
+        break;
+      case 'h':
+        xhttp.open("GET", "/key/f4?d="+ new Date().getTime(), true);
+        break;
+      case 'j':
+        xhttp.open("GET", "/key/f-4?d="+ new Date().getTime(), true);
+        break;
+      case 'k':
+        xhttp.open("GET", "/key/g4?d="+ new Date().getTime(), true);
+        break;
+      case 'l':
+        xhttp.open("GET", "/key/g-4?d="+ new Date().getTime(), true);
+        break;
+      case 'b':
+        xhttp.open("GET", "/key/a4?d="+ new Date().getTime(), true);
+        break;
+      case 'n':
+        xhttp.open("GET", "/key/a-4?d="+ new Date().getTime(), true);
+        break;
+      case 'm':
+        xhttp.open("GET", "/key/b4?d="+ new Date().getTime(), true);
+        break;
+      default:
+
+    }
+    xhttp.send();
+  }
+  document.addEventListener("keydown", function(e){
+    button(e.key);
+  }, false);
+  document.addEventListener("keypress", function(e){}, false);
+  document.addEventListener("keyup", function(e){ }, false);
+</script>

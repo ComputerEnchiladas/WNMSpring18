@@ -1,0 +1,12 @@
+<h1>Real Time Temperature</h1>
+<div id="temperature"></div>
+
+<script src="https://cdn.socket.io/socket.io-1.7.3.js"></script>
+<script type="text/javascript">
+  var temp = document.getElementById('temperature');
+  var socket = io();
+  socket.on('event:temp:read', function(val){
+    console.log('Server says temperature is: ', val)
+    temp.innerHTML = val;
+  });
+</script>
