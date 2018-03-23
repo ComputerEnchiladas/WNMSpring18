@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <canvas baseChart width="400" height="400"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </ion-list>
+  <ion-list>
+    <ion-list-header color="danger">
+      RED
+      <ion-badge color="danger" item-end>{{red}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="255" [(ngModel)]="red" color="danger" debounce="200" (ionChange)="onSliderChanged('red', red)">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header color="secondary">
+      GREEN
+      <ion-badge color="secondary" item-end>{{green}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="255" [(ngModel)]="green" color="secondary" debounce="200" (ionChange)="onSliderChanged('green', green)">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header style="color: #fff;background-color: #488aff;">
+      BLUE
+      <ion-badge item-end>{{blue}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="255" [(ngModel)]="blue" color="primary" debounce="200" (ionChange)="onSliderChanged('blue', blue)">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+</ion-content>

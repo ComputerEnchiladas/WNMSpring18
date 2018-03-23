@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Product One
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Temperature (current: {{curTemp}})
+      <ion-badge item-end>{{setTemp}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="60" max="90" [(ngModel)]="setTemp" debounce="100" (ionChange)="onTempChanged()">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Margin
+      <ion-badge item-end>{{setMargin}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="5" [(ngModel)]="setMargin" debounce="100" (ionChange)="onMarginChanged()">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+</ion-content>
